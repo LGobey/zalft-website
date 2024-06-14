@@ -6,29 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watch This Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon"> <!-- Ensure this line points to your favicon -->
     <style>
         body {
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #deb887; /* cardboard color */
+            background-image: url('./images/cardboard-texture.jpg'); /* Ensure this path points to your cardboard texture image */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            overflow: hidden;
         }
 
         #logo {
-            max-width: 200px;
-            max-height: 200px;
+            max-width: 200px; /* Increased size */
+            max-height: 200px; /* Increased size */
+            transition: transform 0.3s;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
         }
 
         #footer {
-            position: absolute;
-            bottom: 10px;
+            margin-top: 20px;
             text-align: center;
-            width: 100%;
-            font-size: 20px;
-            color: #333;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* Adding some shadow effect for better visibility */
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
     </style>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';">
