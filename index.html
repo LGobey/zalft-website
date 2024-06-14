@@ -11,74 +11,74 @@
 
 
     <style>
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end; /* Align items to the right */
-    min-height: 100vh;
-    background-color: #fff; /* Changed background color to white */
-    background-image: url('./images/olive-bg.jpg'); /* Ensure this path points to your cardboard texture image */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    overflow: hidden;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end; /* Align items to the right */
+            min-height: 100vh;
+            background-color: #fff; /* Changed background color to white */
+            background-image: url('./images/olive-bg.jpg'); /* Ensure this path points to your cardboard texture image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            overflow: hidden;
+        }
 
-#logo {
-    margin-right: 20px; /* Add some space to the right of the logo */
-    max-width: 100%; /* Ensure the logo doesn't exceed its container */
-    height: auto; /* Maintain aspect ratio */
-    width: 30%; /* Set the logo width to 30% of its container */
-}
+        #logo {
+            margin-right: 5%; /* Add some space to the right of the logo */
+            max-width: 100%; /* Ensure the logo doesn't exceed its container */
+            height: auto; /* Maintain aspect ratio */
+            width: 30%; /* Set the logo width to 30% of its container */
+        }
 
-#coming-soon {
-    text-align: center;
-    font-size: 3vw; /* Use viewport width for font size, adjusts with window size */
-    margin-top: 20px; /* Add space from the top */
-    color: #556b2f; /* Dark olive green */
-    font-family: 'Arial', sans-serif; /* Use a modern font */
-    margin-right: calc(11%); /* Calculate margin based on logo width and desired spacing */
-    text-shadow: 2px 2px 5px white;
-}
+        #coming-soon {
+            text-align: center;
+            font-size: 3vw; /* Use viewport width for font size, adjusts with window size */
+            margin-top: 20px; /* Add space from the top */
+            color: #556b2f; /* Dark olive green */
+            font-family: 'Arial', sans-serif; /* Use a modern font */
+            margin-right: calc(11%); /* Calculate margin based on logo width and desired spacing */
+            text-shadow: 2px 2px 5px white;
+        }
 
-#coming-time {
-    text-align: center;
-    font-size: 12vw; /* Use viewport width for font size, adjusts with window size */
-    margin-top: 0px; /* Add space from the top */
-    color: #556b2f; /* Dark olive green */
-    font-family: 'Arial', sans-serif; /* Use a modern font */
-    margin-right: calc(10%); /* Calculate margin based on logo width and desired spacing */
-    text-shadow: 2px 2px 5px white;
-}
-
-
+        #coming-time {
+            text-align: center;
+            font-size: 12vw; /* Use viewport width for font size, adjusts with window size */
+            margin-top: 0px; /* Add space from the top */
+            color: #556b2f; /* Dark olive green */
+            font-family: 'Arial', sans-serif; /* Use a modern font */
+            margin-right: calc(10%); /* Calculate margin based on logo width and desired spacing */
+            text-shadow: 2px 2px 5px white;
+        }
 
 
-@media screen and (max-width: 600px) {
-    /* Styles for screens less than or equal to 600px wide */
-    body {
-        align-items: center; /* Center items horizontally on smaller screens */
-    }
 
-    #coming-time,
-    #coming-soon {
-        font-size: 100px; /* Adjust the font size for smaller screens */
-    }
-}
 
-@media screen and (max-width: 400px) {
-    /* Styles for screens less than or equal to 400px wide */
-    #coming-time,
-    #coming-soon {
-        font-size: 60px; /* Further adjust the font size for smaller screens */
-    }
-}
+        @media screen and (max-width: 600px) {
+            /* Styles for screens less than or equal to 600px wide */
+            body {
+                align-items: center; /* Center items horizontally on smaller screens */
+            }
+
+            #coming-time,
+            #coming-soon {
+                font-size: 100px; /* Adjust the font size for smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            /* Styles for screens less than or equal to 400px wide */
+            #coming-time,
+            #coming-soon {
+                font-size: 60px; /* Further adjust the font size for smaller screens */
+            }
+        }
     </style>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';">
 </head>
