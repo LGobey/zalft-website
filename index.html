@@ -38,15 +38,14 @@
 
         #coming-soon {
             text-align: center; /* Center the text */
-            font-size: 36px; /* Adjust the font size as needed */
+            font-size: 34px; /* Adjust the font size as needed */
             margin-top: 10px; /* Add some space between the logo and the text */
             color: #556b2f; /* Dark olive green */
         }
-
-        #countdown {
-            text-align: center; /* Center the countdown */
-            font-size: 24px; /* Adjust the font size as needed */
-            margin-top: 10px; /* Add some space between the text and the countdown */
+        #coming-time {
+            text-align: center; /* Center the text */
+            font-size: 200px; /* Adjust the font size as needed */
+            margin-top: 10px; /* Add some space between the logo and the text */
             color: #556b2f; /* Dark olive green */
         }
 
@@ -57,40 +56,9 @@
 <body>
     <div>
         <img id="logo" src="./images/Zalft-TP.png" alt="Your Logo">
-        <div id="coming-soon">Coming Soon</div>
-        <div id="countdown"></div>
+        <div id="coming-soon">Arriving</div>
+        <div id="coming-time">2024</div>
     </div>
-
-    <script>
-        // Set the date we're counting down to (December 1, 2024)
-        var countDownDate = new Date("Dec 1, 2024 00:00:00").getTime();
-
-        // Update the countdown every 1 second
-        var x = setInterval(function () {
-
-            // Get the current date and time
-            var now = new Date().getTime();
-
-            // Calculate the remaining time
-            var distance = countDownDate - now;
-
-            // Calculate days, hours, minutes, and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the countdown
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-
-            // If the countdown is over, display a message
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
-            }
-        }, 1000);
-    </script>
 
 </body>
 
