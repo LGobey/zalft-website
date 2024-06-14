@@ -14,15 +14,19 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('./images/cardboard-texture.jpg'); /* Ensure this path points to your cardboard texture image */
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #fff; /* Changed background color to white */
+            background-image: url('./images/comingsoon-bg.jpg'); /* Ensure this path points to your cardboard texture image */
             background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-position: center;
             font-family: 'Roboto', sans-serif;
             color: #333;
             overflow: hidden;
+            padding: 20px; /* Added padding for spacing */
         }
 
         #logo {
@@ -30,6 +34,9 @@
             max-height: 200px; /* Increased size */
             transition: transform 0.3s;
             animation: bounce 2s infinite;
+            position: absolute; /* Positioned logo absolutely */
+            top: 20px; /* Positioned logo 20px from the top */
+            left: 20px; /* Positioned logo 20px from the left */
         }
 
         @keyframes bounce {
@@ -48,17 +55,35 @@
             margin-top: 20px;
             text-align: center;
             font-size: 24px;
-            color: #fff;
+            color: #333; /* Changed text color to darker */
         }
 
         h1 {
             margin: 0;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        /* Adding some shadow effect for better visibility */
-        h1 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        #countdown {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 2em;
+            color: #333; /* Changed text color to darker */
+        }
+
+        .countdown-item {
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .countdown-item span {
+            display: block;
+            font-size: 0.5em;
+        }
+
+        .countdown-item div {
+            font-weight: bold;
         }
     </style>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';">
@@ -71,6 +96,50 @@
     <div id="footer">
         <h1>Watch this space!</h1>
     </div>
+    <div id="countdown">
+        <div class="countdown-item">
+            <div id="days">0</div>
+            <span>Days</span>
+        </div>
+        <div class="countdown-item">
+            <div id="hours">0</div>
+            <span>Hours</span>
+        </div>
+        <div class="countdown-item">
+            <div id="minutes">0</div>
+            <span>Minutes</span>
+        </div>
+        <div class="countdown-item">
+            <div id="seconds">0</div>
+            <span>Seconds</span>
+        </div>
+    </div>
+
+    <script>
+        function countdownTimer() {
+            const endDate = new Date("2024-12-31T00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = endDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+                document.getElementById('countdown').innerText = "EXPIRED";
+            }
+        }
+
+        const timerInterval = setInterval(countdownTimer, 1000);
+        countdownTimer();  // initial call to display timer immediately
+    </script>
 </body>
 
 </html>
